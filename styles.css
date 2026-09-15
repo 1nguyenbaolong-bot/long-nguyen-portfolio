@@ -74,9 +74,30 @@ strong { color: var(--text); }
   min-height: 88vh;
   display: grid;
   grid-template-columns: 1.08fr .92fr;
+  grid-template-rows: auto auto;
   align-items: center;
-  gap: 58px;
+  column-gap: 58px;
+  row-gap: 22px;
   padding-top: 76px;
+}
+.hero-copy { grid-row: 1 / span 2; }
+.profile-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 4px;
+}
+.profile-photo {
+  width: 230px;
+  height: 230px;
+  object-fit: cover;
+  object-position: center 32%;
+  border-radius: 50%;
+  border: 4px solid rgba(119,229,189,.78);
+  box-shadow:
+    0 24px 60px rgba(0,0,0,.34),
+    0 0 0 10px rgba(119,229,189,.055);
+  background: var(--bg-soft);
 }
 .eyebrow {
   margin: 0 0 14px;
@@ -206,7 +227,10 @@ footer { max-width: var(--max); margin: 0 auto; padding: 0 28px 32px; color: var
   .nav { display: none; position: absolute; top: 76px; left: 16px; right: 16px; padding: 18px; flex-direction: column; border: 1px solid var(--line); background: #0a1626; border-radius: 14px; }
   .nav.open { display: flex; }
   .menu-btn { display: block; background: transparent; color: var(--text); border: 1px solid var(--line); border-radius: 9px; padding: 8px 10px; }
-  .hero { grid-template-columns: 1fr; padding-top: 58px; }
+  .hero { grid-template-columns: 1fr; grid-template-rows: auto; padding-top: 58px; }
+  .hero-copy { grid-row: auto; }
+  .profile-wrap { justify-content: flex-start; }
+  .profile-photo { width: 190px; height: 190px; }
   .split-section, .education-strip { grid-template-columns: 1fr; gap: 26px; }
   .about-meta { grid-template-columns: 1fr; }
   .timeline-item { grid-template-columns: 1fr; gap: 12px; }
@@ -217,6 +241,7 @@ footer { max-width: var(--max); margin: 0 auto; padding: 0 28px 32px; color: var
   .section { padding: 78px 20px; }
   .site-header { padding: 14px 20px; }
   h1 { font-size: 3.15rem; }
+  .profile-photo { width: 165px; height: 165px; }
   .impact-panel { padding: 22px; }
   .impact-stat { grid-template-columns: 92px 1fr; }
   .impact-stat strong { font-size: 2rem; }
